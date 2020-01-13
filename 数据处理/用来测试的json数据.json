@@ -1,0 +1,41 @@
+{
+  "id": "2016021715272727370",
+  "text": "2016017号",
+  "state": "open",
+  "attributes": {
+    "url": "scxx_presale_show.php?projid=15796&id=2016021715272727370"
+  },
+  "children": [
+    {
+      "id": "0150050078004",
+      "text": "3号住宅楼",
+      "state": "open",
+      "attributes": {
+        "url": "scxx_floor_show.php?projid=15796&id=0150050078004"
+      },
+      "children": [
+        {
+          "id": "0150050078004",
+          "text": "地下室或商铺",
+          "attributes": {
+            "url": "scxx_subroom_show.php?sub=00&id=0150050078004"
+          }
+        },
+        {
+          "id": "0150050078004",
+          "text": "01单元",
+          "attributes": {
+            "url": "scxx_subroom_show.php?sub=01&id=0150050078004"
+          }
+        },
+        {
+          "id": "0150050078004",
+          "text": "02单元",
+          "attributes": {
+            "url": "scxx_subroom_show.php?sub=02&id=0150050078004"
+          }
+        }
+      ]
+    }
+  ]
+}

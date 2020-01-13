@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 37, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 38, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 38, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 38, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 38, in <module>
+    1/0
+ZeroDivisionError: division by zero
+Traceback (most recent call last):
+  File "D:/platform/demo/捕获异常/traceback的用法.py", line 38, in <module>
+    1/0
+ZeroDivisionError: division by zero

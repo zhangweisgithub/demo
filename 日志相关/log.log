@@ -1,0 +1,6 @@
+2019-12-05 14:57:31,289 - root - DEBUG - debug 信息
+2019-12-05 14:57:31,290 - root - INFO - info 信息
+2019-12-05 14:57:31,290 - root - WARNING - warn 信息
+2019-12-05 14:57:31,290 - root - ERROR - error 信息
+2019-12-05 14:57:31,290 - root - CRITICAL - critical 信息
+2019-12-05 14:57:31,290 - root - DEBUG - 这些东西 是自定义信息
