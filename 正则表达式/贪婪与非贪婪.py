@@ -7,3 +7,4 @@ print ("贪婪匹配:", res1)
 
 res2 = re.findall("<a>(.*?)</a>", s)
 print ("非贪婪匹配:", res2)
+
