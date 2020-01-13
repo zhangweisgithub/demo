@@ -15,7 +15,6 @@ class Singleton(object):
             cls.__instance = object.__new__(cls)
         return cls.__instance
 
-
 a = Singleton(18, "dongge")
 b = Singleton(12, "dongge")
 
@@ -24,3 +23,6 @@ print(id(b))
 
 a.age = 19          # 给a指向的对象添加一个属性
 print(b.age)        # 获取b指向的对象的age属性
+
+
+
