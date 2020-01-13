@@ -1,1 +1,6 @@
 /.idea/
+*.log
+/logs/
+__pycache
+*.pyo
+*.pyc
