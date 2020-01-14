@@ -13,7 +13,7 @@ import time
 
 class Animal(object):
     def __init__(self, name):
-        print("__init__方法别调用")
+        print("__init__方法被调用")
         self.__name = name
 
     def __del__(self):
