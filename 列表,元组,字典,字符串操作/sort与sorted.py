@@ -7,7 +7,7 @@ print(list)        # 无返回值
 
 list = [0, -1, 3, -10, 5, 9]
 res = sorted(list, reverse=False)
-print res                   # sorted有返回值
+print (res)                   # sorted有返回值
 
 
 """

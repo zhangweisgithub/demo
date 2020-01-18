@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import pkgutil
 import importlib
-import python_basic.pkgutil_iter_modules.clazz as clazz_module
+import python_module.pkgutil_modules.clazz as clazz_module
 
 """
 __path__指定了包的搜索路径
