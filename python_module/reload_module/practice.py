@@ -3,21 +3,20 @@
 import pkgutil
 import sys
 import traceback
-
-from flask import Flask, jsonify, current_app
+from flask import Flask, current_app
 import json
 import importlib
 importlib.reload(sys)
-import reload_module.test12
+import python_module.reload_module.func_test
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    import reload_module as modules
+    import python_module.reload_module as modules
     reload_modules(modules, log=current_app.logger)          # 先对函数进行reload操作,然后再调用函数
-    reload_module.test12.func1()
-    return json.dumps({"code": "fds"})  # 返回给前端的数据本质上是字符串
+    data = python_module.reload_module.func_test.func1()
+    return json.dumps({"code": str(data)})  # 返回给前端的数据本质上是字符串
 
 
 def reload_modules(module, log=None, out=[]):

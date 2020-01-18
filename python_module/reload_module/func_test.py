@@ -5,4 +5,5 @@ import time
 
 def func1():
     print(time.localtime())
-    print("123455")
+    data = "123456"
+    return data

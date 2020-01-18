@@ -10,12 +10,9 @@ import importlib
 
 
 def get_modules(package="."):
-    """
-    获取包名下所有非__init__的模块名
-    """
+    """获取包名下所有非__init__的模块名"""
     modules = []
     files = os.listdir(package)          # ['a.py', 'b.py', '__pycache__']    __pycache__ 里面存放的是编译好的字节码,cpu直接读取
-
     for file in files:
         if not file.startswith("__"):
             name, ext = os.path.splitext(file)      # a, .py   分离文件名与扩展名；默认返回(fname,fextension)元组，可做分片操作
@@ -44,5 +41,6 @@ if __name__ == '__main__':
 
 
 """
-可以看到，我在只知道包名的情况下，成功获取了包下所有模块，和模块中所有的方法，并成功调用,但是python推荐使用pkgutil.iter_modules(path=None, prefix="")
+可以看到，我在只知道包名的情况下，成功获取了包下所有模块，和模块中所有的方法，
+并成功调用,但是python推荐使用pkgutil.iter_modules(path=None, prefix="")
 """
