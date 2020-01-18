@@ -1,7 +1,7 @@
 /.idea/
 *.log
 /logs/
-__pycache
+__pycache__
 *.pyo
 *.pyc
 /venv/

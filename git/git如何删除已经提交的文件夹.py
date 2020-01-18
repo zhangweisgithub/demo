@@ -12,3 +12,8 @@ $ git commit -m '删除.idea'        # 提交,添加操作说明
 $ git push -u origin master               # 将本次更改更新到github项目上去
 
 """
+
+
+"""
+git rm -r --cached *__pycache__* 
+"""
