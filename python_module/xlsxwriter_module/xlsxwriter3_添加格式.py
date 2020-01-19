@@ -4,7 +4,7 @@ from datetime import datetime
 import xlsxwriter
 
 # Create a workbook and add a worksheet.
-workbook = xlsxwriter.Workbook('Expenses03.xlsx')
+workbook = xlsxwriter.Workbook('3.xlsx')
 worksheet = workbook.add_worksheet()
 
 # Add a bold format to use to highlight cells.
@@ -36,10 +36,9 @@ expenses = (
 row = 1
 col = 0
 
-for item, date_str, cost in (expenses):
+for item, date_str, cost in expenses:
     # Convert the date string into a datetime object.
     date = datetime.strptime(date_str, "%Y-%m-%d")
-
     worksheet.write_string(row, col, item)
     worksheet.write_datetime(row, col + 1, date, date_format)
     worksheet.write_number(row, col + 2, cost, money_format)
@@ -48,5 +47,4 @@ for item, date_str, cost in (expenses):
 # Write a total using a formula.
 worksheet.write(row, 0, 'Total', bold)
 worksheet.write(row, 2, '=SUM(C2:C5)', money_format)
-
 workbook.close()

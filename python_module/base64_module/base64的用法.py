@@ -23,5 +23,6 @@ print("原文本:", my_time)
 # a = "eyJ1aWROdW1iZXIiOiAiMTkyMTIiLCAiZGlzcGxheU5hbWUiOiAiemhhbmd3ZWlfdmVuZG9yIiwgInJvbGUiOiAwLCAidWlkIjogInpoYW5nd2VpX3ZlbmRvciIsICJwbGF0Zm9ybSI6IDEsICJyZW1vdGVfaXAiOiAiMTAuOS4xNzYuMiIsICJleHBpcmUiOiAiMjAxOS0wOS0yNCAxODowOTo0NiJ9"
 a = "eyJ1aWROdW1iZXIiOiAiMTkyMTIiLCAiZGlzcGxheU5hbWUiOiAiemhhbmd3ZWlfdmVuZG9yIiwgInJvbGUiOiAwLCAidWlkIjogInpoYW5nd2VpX3ZlbmRvciIsICJwbGF0Zm9ybSI6IDEsICJyZW1vdGVfaXAiOiAiMTAuOS4xNzYuMiIsICJleHBpcmUiOiAiMjAxOS0wOS0yNSAxMToyOTo1MSJ9"
 b = base64.b64decode(a).decode("utf-8")
+# 同: b = str(base64.b64decode(a), "utf-8")
 print("token:", b)
 

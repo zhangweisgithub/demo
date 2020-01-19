@@ -1,17 +1,11 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 # AES-demo
-"""
-    @author: sy
-
-    @file: python_AES.py
-
-    @time: 2017/12/12 09:10
-
-    @desc: AES加密
-"""
 
 from Crypto.Cipher import AES
+"""
+根据key创建一个加密器,通过加密器对数据进行加密,然后数据解密的时候也需要用到这个加密器进行数据解密
+"""
 
 # 秘钥,此处需要将字符串转为字节
 key = b'abcdefgh'
@@ -56,11 +50,3 @@ dec = str(aes.decrypt(encrypted_text), encoding="utf-8", errors="ignore")       
 print("2:", dec)       # 2: woshijiamineirong
 
 
-"""
-之前的加密方法是直接通过base64进行加密的
-{"uidNumber": "19212", "displayName": "zhangwei_vendor", "role": 2, "uid": "zhangwei_vendor", "platform": 1, "remote_ip": "127.0.0.1", "expire": "2019-10-10 11:23:03"}
-"""
-import base64
-t = "eyJ1aWROdW1iZXIiOiAiMTkyMTIiLCAiZGlzcGxheU5hbWUiOiAiemhhbmd3ZWlfdmVuZG9yIiwgInJvbGUiOiAyLCAidWlkIjogInpoYW5nd2VpX3ZlbmRvciIsICJwbGF0Zm9ybSI6IDEsICJyZW1vdGVfaXAiOiAiMTI3LjAuMC4xIiwgImV4cGlyZSI6ICIyMDE5LTEwLTEwIDExOjIzOjAzIn0="
-p = str(base64.b64decode(t), "utf-8")
-print(p)
