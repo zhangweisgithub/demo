@@ -9,6 +9,6 @@ platform: 项目代码及函数解析
 database: 数据库相关
 regular: 正则表达式
 open_source: 相关开源项目的使用
-shell: shell相关的操作
+linux: linux及shell相关的操作
 algorithm: 算法相关
 
