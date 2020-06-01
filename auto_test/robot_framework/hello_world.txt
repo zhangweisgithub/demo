@@ -1,0 +1,5 @@
+# __author__ = 'zhouqing'
+*** Test Cases ***
+#声明测试用例名称
+My First Robot Script
+    Log    Hello World11

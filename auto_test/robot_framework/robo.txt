@@ -1,0 +1,80 @@
+*** Settings ***
+Library     MyLib                                          #导入自定义的库
+Library     SeleniumLibrary
+Library     SSHLibrary
+Library     ExcelLibrary
+
+
+*** Test Cases ***
+                                                            #第一行为固定格式，标识
+                                                            #建议同python一致，使用tab缩进对齐(pycharm中设置tab=4空格)，否则可能报执行失败，报 "Test case contains no keywords"
+case1 helloworld                                            #案例名
+    log     chenyuebai first rfw case                        #log 相当于python的print，可在生成的log.xml中查看
+
+case 2 log                                                 #打异常日志，支持多种级别
+    log     test line 2     ERROR
+
+case 3 varible
+    ${myname}     Set variable        chen                  #定义变量
+    log     my name is ${myname}                            #使用变量
+
+#case 4 use varible                                         #变量作用域为其定义所在的案例（case3），否则报"Variable '${myname}' not found."
+#    log     ${myname}
+
+case 5 Catenate
+    ${hi1}    Catenate      hello    world                  #定义变量方式2  连接两个对象，支持自定义连接符
+    log    ${hi1}
+    ${hi2}    Catenate      SEPARATOR=----  hello    world
+    log    ${hi2}
+
+case 6 list
+    @{mylist}       create list     a       b      c        #定义列表
+    log many        @{mylist}                               #打印列表中的元素
+
+case 7 get time
+    ${currentTime}      get time                            #获取当前时间     2018-01-02 18:05:47
+    log     ${currentTime}
+    ${currentYear}      get time    format=year             #支持多种传参，详情看函数定义
+    log     current year is ${currentYear}
+
+case 8 sleep
+    log     get time
+    sleep   1                                               #睡眠，等同于python的time.sleep(5)
+    log     get time
+
+case 9 if
+    ${score}    set variable    55
+    run keyword if    ${score}>=90    log    优秀
+    ...    ELSE IF    ${score}>=70    log    良好           #ELSE/ELSE IF要大写。。。语法很蛋疼。。为啥不直接套用python的语法。。
+    ...    ELSE    log    很差                              # ... 不知道基于什么考虑的。。看起来像是标识属于“run keyword if”这个判断逻辑；类似python的tab？
+
+case 10 for                                                 #for循环，注意需要使用\来标识这个for循环范围，感觉和上面的...类似
+    :FOR    ${i}    IN RANGE    5                           #   for in in range(5):
+    \   log    ${i}                                         #        print(i)
+
+case 11 allround the list
+    @{myList}    create list  1    2    3    4              # myList = [1,2,3,4]
+    :FOR    ${i}    IN    @{myList}                         # for i in myList:
+    \   log    ${i}                                         #  print(i)
+
+case 12 Evauate                                             #调用python中的方法，很强大
+    ${randomNum}    EVALUATE    random.random()     random  #变量    关键字EVALUATE    调用python的方法    方法所在的库名
+    log    ${randomNum}
+
+case 13 call my python                                      #导入自定义库，下面有详细说明
+    ${nowTime}    get current time
+    log    ${nowTime}
+
+case 14 Comment
+    log     start
+    #line 1
+    comment  line 2                                         #标明注释：使用关键字或者#均可
+    log     end
+
+
+case 15 Selenium2Library　　　　　　　　　　　　　　　　　　　　  #Selenium2Library库，操作浏览器，可作web界面自动化，待细化
+    open_browser    http://www.baidu.com    firefox
+    Input text    id=kw    陈月白
+    click button    id=su
+    sleep       3
+    close Browser
