@@ -19,7 +19,9 @@ json_str = {'code': 0, 'demands': [
      'title': '关联需求1', 'typo': None, 'updated_time': '2020-07-21 10:23:06', 'version_id': '19082,319',
      'version_name': '3.3.1,3.3.2'}], 'total': 3, 'elapsed': 68.513, 'status_code': 200}
 property_path = "demands.0.title?"
+# property_path = "demands.-1:.title?"     # 如果是负索引,需要在负索引后面添加 :
 property_path = property_path[:-1]  # 去除结尾的"?"
-
+#
+# property_path = "code"
 temp_value = jsonpath.jsonpath(json_str, property_path)
 print(temp_value)
