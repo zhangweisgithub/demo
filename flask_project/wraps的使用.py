@@ -28,4 +28,27 @@ def test():
 
 print(test.__name__, test.__doc__)  # test Testword
 
+print(hasattr(test, "__wrapped__"))  # 判断是否添加了@wraps装饰器
 
+
+def test2(func):
+    @wraps(func)
+    def my_decorator(func):
+        @wraps(func)  # 唯一的区别是这里加了一个装饰器,函数的名称及备注信息就不会发生更改了(如果去掉这行,打印的内容是不相同的)
+        def wrapper(*args, **kwargs):
+            '''decorator'''
+            print('Decorated function...')
+            return func(*args, **kwargs)
+
+        return wrapper
+
+    return my_decorator
+
+
+@test2
+def test3():
+    """Testword"""
+    print('Test function')
+
+
+print(hasattr(test3, "__wrapped__"))  # 如果这里想要返回True的话,就要在my_decorator(func)函数是需要添加装饰器@wrap(func)的
