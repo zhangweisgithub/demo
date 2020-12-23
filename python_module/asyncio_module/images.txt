@@ -1,0 +1,2 @@
+http://41ip:port/manual/manual_files/SCG-ToG-VIPER/plan_files/plan_306/dog.jpg
+http://41ip:port/manual/manual_files/SCG-ToG-VIPER/plan_files/plan_306/cat.jpg
