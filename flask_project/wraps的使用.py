@@ -52,3 +52,4 @@ def test3():
 
 
 print(hasattr(test3, "__wrapped__"))  # 如果这里想要返回True的话,就要在my_decorator(func)函数是需要添加装饰器@wrap(func)的
+print(test3.__wrapped__)   # <function test3 at 0x0000016544D84AE8>
