@@ -1,6 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 import inspect
+from functools import wraps
 
 """
 通过inspect模块获取函数
@@ -10,8 +11,10 @@ import inspect
 def get_func_params(func):
     # 使用inspect模块，简单方便
     params = {}
-    func = func.__wrapped__ if hasattr(func, '__wrapped__') else func
-
+    # func = func.__wrapped__ if hasattr(func, '__wrapped__') else func   # 这个地方对于多个装饰器函数不起作用
+    while hasattr(func, '__wrapped__'):
+        print("这个函数有几个装饰器,这里就会被打印几次")
+        func = func.__wrapped__
     func_input_args = inspect.getfullargspec(func)
     print("func_input_args:", func_input_args)
     arg_name_list = list(func_input_args.args)
@@ -28,6 +31,26 @@ def get_func_params(func):
     return params
 
 
+def logit(func):
+    @wraps(func)
+    def with_logging(*args, **kwargs):
+        print(func.__name__ + " was called")
+        return func(*args, **kwargs)
+
+    return with_logging
+
+
+def logit2(func):
+    @wraps(func)
+    def with_logging(*args, **kwargs):
+        print(func.__name__ + " was called")
+        return func(*args, **kwargs)
+
+    return with_logging
+
+
+@logit2
+@logit
 def cat(host, passwd=None, user="root"):
     pass
 
