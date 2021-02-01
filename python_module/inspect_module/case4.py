@@ -7,11 +7,19 @@ from functools import wraps
 通过inspect模块获取函数
 """
 
+"""
+# r直接反应对象本体。,  ！符号，这个只在fromat中有用，要注意方法。但是效果类似
+参考:https://blog.csdn.net/a19990412/article/details/80149112
+"""
+
 
 def get_func_params(func):
     # 使用inspect模块，简单方便
     params = {}
     # func = func.__wrapped__ if hasattr(func, '__wrapped__') else func   # 这个地方对于多个装饰器函数不起作用
+    if not callable(func):
+        return '{!r} is not a callable object'.format(func)   # r直接反应对象本体。
+        # raise TypeError('{!r} is not a callable object'.format(func))
     while hasattr(func, '__wrapped__'):
         print("这个函数有几个装饰器,这里就会被打印几次")
         func = func.__wrapped__
@@ -58,3 +66,26 @@ def cat(host, passwd=None, user="root"):
 params = get_func_params(cat)
 print("参数:", params)
 print(cat.__defaults__)
+
+print("---------------------------")
+
+"""
+@property装饰的函数,版本都是返回类的一个属性, 它的类型为<class 'property'>, not callable
+"""
+
+
+class B(object):
+    @property
+    def ss(self):
+        return "这个是函数的属性"
+
+    @staticmethod
+    def sss(aaa="aaa"):
+        print(aaa)
+
+
+params = get_func_params(B.sss)
+print("参数1:", params)
+
+params = get_func_params(B.ss)
+print("参数2:", params)
