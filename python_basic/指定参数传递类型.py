@@ -20,3 +20,14 @@ demo('小小', 2)  # 正常显示
     对于注解, python不做检查, 不做强制, 不做验证, 什么操作都不做.  换而言之, 注释对python解释器没有任何意义, 只是为了方便使用函数的人  
 """
 print(demo.__annotations__)  # {'name': <class 'str'>, 'age': 'int > 0', 'return': <class 'str'>}
+
+
+"""
+函数参数注解
+"""
+
+def add(x, y:int) -> int:
+    return x+y
+
+print(add.__annotations__)
+ret = add(12, 24)
